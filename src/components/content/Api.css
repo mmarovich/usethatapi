@@ -1,0 +1,29 @@
+.api-container {
+    width: 33.33%;
+    height: 300px;
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.api {
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    margin: auto;
+    padding: 30px 0;
+    text-align: center;
+
+}
+
+@media screen  and (max-width: 979px) /* Tablet */ {
+    .api-container {
+        width: 50%;
+    }
+}
+  
+@media screen and (max-width: 650px) /* Mobile */ {
+    .api-container {
+        width: 100%;
+    }
+}
