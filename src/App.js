@@ -2,14 +2,19 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Header from './components/header/Header';
-import ApiList from './components/content/ApiList';
+import Routes from './components/router/Routes';
+
+import store from './store/store';
+import * as actions from './actions';
+
+console.log(store.getState());
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Header />
-        <ApiList />
+        <Routes />
       </div>
     );
   }

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 import apiData from '../apis/ApiData';
-import Api from './Api';
+import ApiCard from './ApiCard';
 
 class ApiList extends Component {
     render() {
         const apiList = apiData.map((item, index) => {
-            return <Api data={item} key={index} />
+            return <ApiCard data={item} key={index} />
         })
         return(
             <div className="apiList-container">
