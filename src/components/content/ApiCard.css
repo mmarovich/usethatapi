@@ -17,13 +17,13 @@
 }
 
 @media screen  and (max-width: 979px) /* Tablet */ {
-    .api-container {
+    .apiCard-container {
         width: 50%;
     }
 }
   
 @media screen and (max-width: 650px) /* Mobile */ {
-    .api-container {
+    .apiCard-container {
         width: 100%;
     }
 }

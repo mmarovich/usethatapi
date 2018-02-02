@@ -4,7 +4,7 @@ import {createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import createHistory from 'history/createBrowserHistory';
 import { composeWithDevtools } from 'redux-devtools-extension';
 
-import { testReducer } from '../reducers/index';
+import { testReducer } from '../reducers';
 
 const reducer = combineReducers({
     register: testReducer
