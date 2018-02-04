@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Router, withRouter, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import ApiList from '../content/ApiList';
 import Api from '../content/Api';
 
+import history from '../../store/store';
+
+const ConnectedSwitch = connect(state => ({
+    location: state.router
+  }))(Switch)
+
 class Routes extends Component {
     render() {
         return(
-            <Router>
-                <Switch>
-                    <Route path="/" exact component={ApiList} />
-                    <Route path="/api" exact component={Api} />
-                </Switch>
-            </Router>
+            <Switch>
+                <Route path="/" exact component={ApiList} />
+                <Route path="/api" exact component={Api} />
+            </Switch>
         )
     }
 }
 
-export default Routes;
+export default withRouter(Routes);

@@ -1,7 +1,7 @@
 
 
-export const TEST = "TEST";
-export const test = test => {
-    type: TEST,
-    test
-}
+export const ADD_TO_QUERYSTRING = "ADD_TO_QUERYSTRING";
+export const addToQuerystring = newQuery => ({
+    type: ADD_TO_QUERYSTRING,
+    newQuery
+})

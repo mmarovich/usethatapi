@@ -1,14 +1,16 @@
 import thunk from 'redux-thunk';
-import { routerMiddleware } from 'react-router-redux';
+import { routerMiddleware, routerReducer as router } from 'react-router-redux';
 import {createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import createHistory from 'history/createBrowserHistory';
-import { composeWithDevtools } from 'redux-devtools-extension';
+// import { composeWithDevtools } from 'redux-devtools-extension';
 
 import { testReducer } from '../reducers';
 
 const reducer = combineReducers({
-    register: testReducer
+    register: testReducer,
+    router
 })
+
 
 export const history = createHistory();
 
