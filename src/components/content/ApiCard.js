@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import './ApiCard.css';
 
-// import store from '../../store/store';
-
-// import * as actions from '../../actions';
-
 class ApiCard extends Component {
+    constructor(props) {
+        super(props);
 
+        this.manipulateQuerystring = this.manipulateQuerystring.bind(this);
+    }
 
 
     manipulateQuerystring() {
@@ -30,4 +31,4 @@ class ApiCard extends Component {
     }
 }
 
-export default ApiCard;
+export default withRouter(ApiCard);
