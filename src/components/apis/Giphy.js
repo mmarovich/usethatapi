@@ -7,6 +7,7 @@ const giphy = {
     paths: [
         {
             host: "api.giphy.com",
+            option: "search",
             path: "/v1/gifs/search",
             method: "GET",
             description: `Search all GIPHY GIFs for a word or phrase. 
@@ -66,6 +67,7 @@ const giphy = {
         },
         {
             host: "api.giphy.com",
+            option: "trending",
             path: "/v1/gifs/trending",
             method: "GET",
             description: `Fetch GIFs currently trending online. 
@@ -105,6 +107,7 @@ const giphy = {
         },
         {
             host: "api.giphy.com",
+            option: "translate",
             path: "/v1/gifs/translate",
             method: "GET",
             description: `The translate API draws on search, 
@@ -129,6 +132,7 @@ const giphy = {
         },
         {
             host: "api.giphy.com",
+            option: "random",
             path: "/v1/gifs/random",
             method: "GET",
             description: `Returns a random GIF, limited by tag. 
@@ -166,6 +170,7 @@ const giphy = {
         },
         {
             host: "api.giphy.com",
+            option: "by ID (single)",
             path: "/v1/gifs/{gif_id}",
             method: "GET",
             description: "Returns a GIF given that GIF's unique ID.",
@@ -188,6 +193,7 @@ const giphy = {
         },
         {
             host: "api.giphy.com",
+            option: "by ID (multiple)",
             path: "/v1/gifs",
             method: "GET",
             description: "A multiget version of the get GIF by ID endpoint.",
@@ -210,6 +216,7 @@ const giphy = {
         },
         {
             host: "api.giphy.com",
+            option: "search (stickers)",
             path: "/v1/stickers/search",
             method: "GET",
             description: `Replicates the functionality and requirements of the classic GIPHY search, 
@@ -268,6 +275,7 @@ const giphy = {
         },
         {
             host: "api.giphy.com",
+            option: "trending (stickers)",
             path: "/v1/stickers/trending",
             method: "GET",
             description: `Fetch Stickers currently trending online. 
@@ -305,6 +313,7 @@ const giphy = {
         },
         {
             host: "api.giphy.com",
+            option: "translate (stickers)",
             path: "/v1/stickers/translate",
             method: "GET",
             description: `The translate API draws on search, 
@@ -329,6 +338,7 @@ const giphy = {
         },
         {
             host: "api.giphy.com",
+            option: "random (stickers)",
             path: "/v1/stickers/random",
             method: "GET",
             description: `Returns a random Sticker, limited by tag. 

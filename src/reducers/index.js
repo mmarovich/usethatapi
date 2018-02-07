@@ -6,10 +6,10 @@ const initialState = {
 
 export const testReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actions.ADD_TO_QUERYSTRING:
+        case actions.PASS_API_DATA:
             return {
                 ...state,
-                queryString: "https://whatupbruh"
+                data: action.data
             }
             default:
                  return state;

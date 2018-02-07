@@ -3,16 +3,21 @@ import { withRouter } from 'react-router-dom';
 
 import './ApiCard.css';
 
+import store from '../../store/store';
+
+import * as actions from '../../actions';
+
 class ApiCard extends Component {
     constructor(props) {
         super(props);
 
-        this.manipulateQuerystring = this.manipulateQuerystring.bind(this);
+        this.transferData = this.transferData.bind(this);
     }
 
 
-    manipulateQuerystring() {
-        console.log("clicked")
+    transferData() {
+        console.log("transferData working!");
+        store.dispatch(actions.passApiData(this.props.data));
         return this.props.history.push('/api');
     }
 
@@ -20,7 +25,7 @@ class ApiCard extends Component {
         return(
             <div className="apiCard-container">
                 <div className="api">
-                    <div className="api-link" onClick={this.manipulateQuerystring}>
+                    <div className="api-link" onClick={this.transferData}>
                         <h1 style={{margin: '10px auto'}}>{this.props.data.name}</h1>
                         <p style={{margin: '10px auto'}}>{this.props.data.description}</p>
                     </div>
