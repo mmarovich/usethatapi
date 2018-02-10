@@ -16,7 +16,6 @@ class ApiCard extends Component {
 
 
     transferData() {
-        console.log("transferData working!");
         store.dispatch(actions.passApiData(this.props.data));
         return this.props.history.push('/api');
     }
