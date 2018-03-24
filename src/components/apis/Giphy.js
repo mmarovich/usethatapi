@@ -4,6 +4,7 @@ const giphy = {
     website: "https://developers.giphy.com",
     documentation: "https://developers.giphy.com/docs/",
     apiKey: true,
+    host: "api.giphy.com",
     paths: [
         {
             host: "api.giphy.com",

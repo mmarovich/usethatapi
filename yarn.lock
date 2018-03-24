@@ -5175,6 +5175,10 @@ react-event-listener@^0.5.1:
     prop-types "^15.6.0"
     warning "^3.0.0"
 
+react-fade-in@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/react-fade-in/-/react-fade-in-0.1.5.tgz#cb487e2f695ed536ec29d80b963570e29276b4df"
+
 react-redux@^5.0.6:
   version "5.0.6"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.6.tgz#23ed3a4f986359d68b5212eaaa681e60d6574946"

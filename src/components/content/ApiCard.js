@@ -16,17 +16,17 @@ class ApiCard extends Component {
 
 
     transferData() {
-        store.dispatch(actions.passApiData(this.props.data));
+        store.dispatch(actions.passApiRootData(this.props.data, this.props.data.host));
         return this.props.history.push('/api');
     }
 
     render() {
-        return(
+        return (
             <div className="apiCard-container">
                 <div className="api">
                     <div className="api-link" onClick={this.transferData}>
-                        <h1 style={{margin: '10px auto'}}>{this.props.data.name}</h1>
-                        <p style={{margin: '10px auto'}}>{this.props.data.description}</p>
+                        <h1 style={{ margin: '10px auto' }}>{this.props.data.name}</h1>
+                        <p style={{ margin: '10px auto' }}>{this.props.data.description}</p>
                     </div>
                     <a href={this.props.data.website}>Website</a>
                 </div>

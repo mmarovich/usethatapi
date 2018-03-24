@@ -1,9 +1,9 @@
 .apiCard-container {
     width: 33.33%;
     height: 300px;
-    border: 1px solid black;
     display: inline-block;
     vertical-align: top;
+    border: 1px solid green;
 }
 
 .api {

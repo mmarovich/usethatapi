@@ -6,8 +6,9 @@
 //     newQuery
 // })
 
-export const PASS_API_DATA = "PASS_API_DATA";
-export const passApiData = data => ({
-    type: PASS_API_DATA,
-    data
+export const PASS_API_ROOT_DATA = "PASS_API_ROOT_DATA";
+export const passApiRootData = (data, host) => ({
+    type: PASS_API_ROOT_DATA,
+    data,
+    host
 })

@@ -1,33 +1,21 @@
 import React, { Component } from 'react';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
-
 import { connect } from 'react-redux';
 
-class Api extends Component {
-    constructor(props) {
-        super(props)
+import ClipBoard from './ClipBoard.js';
 
-        this.state = {
-            value: '',
-            copied: false,
-        };
-    }
+class Api extends Component {
+
     render() {
+        console.log(this.props.api);
+        console.log(this.props.apiPaths);
 
         const generateOptions = this.props.apiPaths.map((path, index) => {
             return (<div key={index}><label>{path.option}</label>
-                <input type="radio" name="api-option" value={path.option}/></div>)
+                <input type="radio" name="api-option" value={path.option} /></div>)
         });
         return (
             <div className="api-container">
-                <input value={this.state.value} style={{width: '500px'}}
-                    onChange={({target: {value}}) => this.setState({value, copied: false})} />
-                <CopyToClipboard text={this.state.value}
-                    onCopy={() => this.setState({copied: true})}>
-                    <button>Copy to clipboard with button</button>
-                </CopyToClipboard>
-                {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
-                <div className="copy-query"></div>
+                <ClipBoard />
                 <form>
                     {generateOptions}
                 </form>
@@ -37,7 +25,8 @@ class Api extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    apiPaths: state.register.data.paths
+    apiPaths: state.register.data.paths,
+    api: state.register.data
 })
 
 export default connect(mapStateToProps)(Api);
