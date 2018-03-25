@@ -15,9 +15,9 @@ class ClipBoard extends Component {
     render() {
         return (
             <div className="clipboard">
-                <input value={"https://" + this.props.clipBoard} style={{ width: '500px' }}
+                <input value={"https://" + this.props.clipBoard.join("")} style={{ width: '500px' }}
                     onChange={({ target: { value } }) => this.setState({ value, copied: false })} />
-                <CopyToClipboard text={"https://" + this.props.clipBoard}
+                <CopyToClipboard text={"https://" + this.props.clipBoard.join("")}
                     onCopy={() => this.setState({ copied: true })}>
                     <button>Copy to clipboard with button</button>
                 </CopyToClipboard>

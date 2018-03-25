@@ -12,6 +12,14 @@ export const testReducer = (state = initialState, action) => {
                 clipBoard: state.clipBoard.concat(action.host),
                 data: action.data
             }
+        case actions.PASS_API_PATH:
+            return {
+                ...state,
+                clipBoard: [
+                    ...state.clipBoard.slice(0, 1),
+                    action.path
+                ]
+            }
             default:
                  return state;
     }

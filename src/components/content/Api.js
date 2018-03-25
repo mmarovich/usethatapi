@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import ClipBoard from './ClipBoard.js';
+import ClipBoard from './ClipBoard';
+import Option from './Option';
 
 class Api extends Component {
 
@@ -10,8 +11,7 @@ class Api extends Component {
         console.log(this.props.apiPaths);
 
         const generateOptions = this.props.apiPaths.map((path, index) => {
-            return (<div key={index}><label>{path.option}</label>
-                <input type="radio" name="api-option" value={path.option} /></div>)
+            return <Option path={path} key={index} />
         });
         return (
             <div className="api-container">
@@ -25,8 +25,7 @@ class Api extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    apiPaths: state.register.data.paths,
-    api: state.register.data
+    apiPaths: state.register.data.paths
 })
 
 export default connect(mapStateToProps)(Api);

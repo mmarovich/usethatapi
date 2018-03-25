@@ -12,3 +12,9 @@ export const passApiRootData = (data, host) => ({
     data,
     host
 })
+
+export const PASS_API_PATH = "PASS_API_PATH";
+export const passApiPath = (path) => ({
+    type: PASS_API_PATH,
+    path
+})
