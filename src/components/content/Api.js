@@ -1,31 +1,25 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 import ClipBoard from './ClipBoard';
-import Option from './Option';
 
 class Api extends Component {
 
-    render() {
-        console.log(this.props.api);
-        console.log(this.props.apiPaths);
+    handleQuery(e) {
+        e.preventDefault()
+        console.log("Hello")
+    }
 
-        const generateOptions = this.props.apiPaths.map((path, index) => {
-            return <Option path={path} key={index} />
-        });
+    render() {
+        console.log(this.props)
         return (
             <div className="api-container">
                 <ClipBoard />
-                <form>
-                    {generateOptions}
+                <form className="form">
+                    <button onClick={this.handleQuery}>Next</button>
                 </form>
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => ({
-    apiPaths: state.register.data.paths
-})
-
-export default connect(mapStateToProps)(Api);
+export default Api;

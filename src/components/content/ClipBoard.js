@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { connect } from 'react-redux';
 
 class ClipBoard extends Component {
     constructor(props) {
@@ -28,9 +27,4 @@ class ClipBoard extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    clipBoard: state.register.clipBoard,
-    api: state.register.data
-})
-
-export default connect(mapStateToProps)(ClipBoard);
+export default ClipBoard;

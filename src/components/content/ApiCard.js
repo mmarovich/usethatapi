@@ -3,24 +3,10 @@ import { withRouter } from 'react-router-dom';
 
 import './ApiCard.css';
 
-import store from '../../store/store';
-
-import * as actions from '../../actions';
-
 class ApiCard extends Component {
-    constructor(props) {
-        super(props);
-
-        this.transferData = this.transferData.bind(this);
-    }
-
-
-    transferData() {
-        store.dispatch(actions.passApiRootData(this.props.data, this.props.data.host));
-        return this.props.history.push('/api');
-    }
 
     render() {
+        console.log(this.props)
         return (
             <div className="apiCard-container">
                 <div className="api">

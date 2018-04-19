@@ -1,43 +1,35 @@
 import React, { Component, Fragment } from 'react';
-import { connect } from 'react-redux';
 
-import store from '../../store/store';
-import * as actions from '../../actions';
+import './Option.css';
 
 class Option extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            chosen: false,
-            pathValue: ''
-        }
-
         this.chooseOption = this.chooseOption.bind(this);
     }
 
     chooseOption(e) {
+        console.log(e.target.checked);
         const pathValue = e.target.value;
-        if (!this.state.chosen) {
-            this.setState({chosen: true})
-            store.dispatch(actions.passApiPath(pathValue));
-        } else {
-            this.setState({chosen: false})
-        }
-        
+        store.dispatch(actions.passApiPath(pathValue));        
     }
 
     render() {
         return(
             <Fragment>
-                <button
+                <input
                     className="option-button"
-                    style={styles.optionButton} 
-                    type="button" 
+                    name="option"
+                    id={this.props.path.option}
+                    type="radio" 
                     value={this.props.path.path}
-                    onClick={(e) => this.chooseOption(e)}>
-                        {this.props.path.option}
-                </button>
+                    onChange={(e) => this.chooseOption(e)}
+                />
+                <label 
+                    htmlFor={this.props.path.option}
+                    style={styles.notChosen}
+                >{this.props.path.option}</label>
             </Fragment>
         )
     }
@@ -48,7 +40,7 @@ const styles = {
         margin: "10px",
         display: "inline-block"
     },
-    Chosen: {
+    chosen: {
         margin: "10px",
         display: "inline-block",
         backgroundColor: "black",
@@ -56,8 +48,4 @@ const styles = {
     }
 }
 
-const mapStateToProps = (state) => ({
-    apiPaths: state.register.data.paths
-})
-
-export default connect(mapStateToProps)(Option);
+export default Option;
