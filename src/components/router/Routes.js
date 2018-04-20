@@ -11,7 +11,7 @@ class Routes extends Component {
             <Router>
                 <Switch>
                     <Route path="/" exact component={ApiList} />
-                    <Route path="/api" exact render={Api}/>
+                    <Route path="/api" exact component={Api}/>
                 </Switch>
             </Router>
         )

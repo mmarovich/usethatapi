@@ -12,11 +12,12 @@ class ClipBoard extends Component {
     }
 
     render() {
+        console.log(this.props)
         return (
             <div className="clipboard">
-                <input value={"https://" + this.props.clipBoard.join("")} style={{ width: '500px' }}
+                <input value={"https://" + this.props.query.join("")} style={{ width: '500px' }}
                     onChange={({ target: { value } }) => this.setState({ value, copied: false })} />
-                <CopyToClipboard text={"https://" + this.props.clipBoard.join("")}
+                <CopyToClipboard text={"https://" + this.props.query.join("")}
                     onCopy={() => this.setState({ copied: true })}>
                     <button>Copy to clipboard with button</button>
                 </CopyToClipboard>
