@@ -1,19 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Api from '../content/Api';
-import ApiList from '../content/ApiList'
+import Home from '../Home';
+import Header from '../Header';
+import Api from '../Api';
 
 class Routes extends Component {
 
     render() {
         return (
-            <Router>
-                <Switch>
-                    <Route path="/" exact component={ApiList} />
-                    <Route path="/api" exact component={Api}/>
-                </Switch>
-            </Router>
+            <Fragment>
+                <Header />
+                <Router>
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route exact path="/api" component={Api} />
+                    </Switch>
+                </Router>
+            </Fragment>
         )
     }
 }
